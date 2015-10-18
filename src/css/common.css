@@ -14,32 +14,29 @@ a {
   }
 }
 
-.holy-grail {
-  display: flex;
-  min-height: 100vh;
-  flex-direction: column;
-}
-
+.holy-grail,
 .content-body {
   display: flex;
-  flex: 1;
-
-}
-
-.main-content {
-  flex: 1;
-
-}
-
-.side-1, .side-2 {
-  background: #f4f2f0;
-  flex: 0 0 12em;
+  flex-direction: column;
 }
 
 .side-1 {
   order: -1;
 }
 
+@media (min-width: 768px) {
+  .content-body {
+    flex-direction: row;
+    flex: 1;
+  }
+  .main-content {
+    flex: 1;
+  }
+  .side-1, .side-2 {
+    flex: 0 0 12em;
+    background: #f4f2f0;
+  }
+}
 .header-nav {
   background: #46b980;
   height: 3em;
