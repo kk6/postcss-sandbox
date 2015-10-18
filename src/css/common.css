@@ -1,5 +1,21 @@
+* {
+  font-weight: 300;
+  font: 400 1em/1.4 "Open Sans",sans-serif;
+}
+
+a {
+  color: #46b980;
+  border-bottom: 1px dashed rgba(70, 185, 128, 0.5);
+  &:focus, &:hover {
+    border-bottom: 1px solid #46B980;
+  }
+  &:active, &:hover {
+    outline: 0px none;
+  }
+}
+
 .header-nav {
-  background: #6c9;
+  background: #46b980;
   height: 3em;
 }
 
@@ -17,7 +33,7 @@
       color: #fff;
 
       &:hover {
-        background: rgba(255, 255, 255, 0.1);
+        text-decoration: underline;
       }
 
     }
