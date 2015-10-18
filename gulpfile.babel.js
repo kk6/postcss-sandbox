@@ -8,6 +8,8 @@ import plumber from 'gulp-plumber'
 import autoprefixer from 'autoprefixer'
 import nested from 'postcss-nested'
 import extend from 'postcss-extend'
+import color from 'postcss-color-function'
+import simpleVars from 'postcss-simple-vars'
 
 
 // -------------------------
@@ -17,8 +19,10 @@ gulp.task('css', () => {
   return gulp.src('./src/css/**/*.css')
     .pipe(plumber())
     .pipe(postcss([
+      simpleVars,
       nested,
       extend,
+      color,
       autoprefixer({browsers: ['last 2 versions']})
     ]))
     .pipe(gulp.dest('./build/css/'))
