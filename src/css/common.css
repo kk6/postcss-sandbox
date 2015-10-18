@@ -1,12 +1,25 @@
-h1 {
-  background: lightblue;
+.header-nav {
+  background: #6c9;
+  height: 3em;
+}
 
-  a {
-    color: #fff;
-    text-decoration: none;
+.main-nav {
+  align-items: flex-end;
+  display: flex;
+  height: 100%;
+  justify-content: center;
 
-    &:hover {
-      text-decoration: underline;
+  li {
+    width: 100px;
+    margin-bottom: 0.2em;
+
+    a {
+      color: #fff;
+
+      &:hover {
+        background: rgba(255, 255, 255, 0.1);
+      }
+
     }
 
   }
