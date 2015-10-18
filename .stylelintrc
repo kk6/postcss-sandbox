@@ -1,0 +1,9 @@
+{
+  "rules": {
+    "color-no-invalid-hex": 2,
+    "number-leading-zero": [2, "always"],
+    "declaration-colon-space-before": [2, "never"],
+    "declaration-no-important": 2,
+    "indentation": [2, 2]
+  }
+}

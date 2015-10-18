@@ -1,0 +1,14 @@
+h1 {
+  background: lightblue;
+
+  a {
+    color: #fff;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+
+  }
+
+}
