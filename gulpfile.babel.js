@@ -7,6 +7,7 @@ import plumber from 'gulp-plumber'
 // postcss processors
 import autoprefixer from 'autoprefixer'
 import nested from 'postcss-nested'
+import extend from 'postcss-extend'
 
 
 // -------------------------
@@ -17,6 +18,7 @@ gulp.task('css', () => {
     .pipe(plumber())
     .pipe(postcss([
       nested,
+      extend,
       autoprefixer({browsers: ['last 2 versions']})
     ]))
     .pipe(gulp.dest('./build/css/'))

@@ -68,17 +68,23 @@ a {
 
 }
 
+@define-extend profile-title {
+  margin-top: 0.5em;
+  text-align: center;
+}
+
 .profile {
   margin-top: 0.5em;
   display: flex;
 }
 
-.name, .screen_name {
-  margin-top: 0.5em;
-  text-align: center;
+.name {
+  @extend profile-title;
+  font-size: 1.2em;
 }
 .screen_name {
-  font-size: small;
+  @extend profile-title;
+  font-size: 0.8em;
 }
 
 .profile-icon {
