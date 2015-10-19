@@ -2,7 +2,12 @@ export function handleFileSelect(evt) {
   evt.stopPropagation()
   evt.preventDefault()
 
-  let files = evt.target.files  // FileList object
+  var files
+  if (evt.dataTransfer) {
+    files = evt.dataTransfer.files
+  } else {
+    files = evt.target.files
+  }
   if (!files) {
     console.log('failed.')
     return false
@@ -25,4 +30,8 @@ export function handleDragOver(evt) {
   evt.stopPropagation()
   evt.preventDefault()
   evt.dataTransfer.dropEffect = 'copy' // Explicitly show this is a copy.
+}
+
+export function handleFileSelectClick(fileSelect) {
+  fileSelect.click()
 }

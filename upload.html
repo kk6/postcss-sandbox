@@ -28,8 +28,9 @@
       <h1>Upload</h1>
       <form action="#">
         <textarea name="textarea"></textarea>
-        <div id="drop_zone">Drop files here</div>
-        <input type="file" id="files" name="files" multiple />
+        <div id="drop_zone">Drop files here
+          <input type="file" id="files" name="files" multiple accept="image/*" style="display:none" />
+        </div>
         <button class="upload-btn" name="submit">Upload</button>
       </form>
       <output id="list"></output>
