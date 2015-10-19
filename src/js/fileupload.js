@@ -2,34 +2,45 @@ export function handleFileSelect(evt) {
   evt.stopPropagation()
   evt.preventDefault()
 
-  var files
+  let files
+
   if (evt.dataTransfer) {
     files = evt.dataTransfer.files
   } else {
     files = evt.target.files
   }
   if (!files) {
-    console.log('failed.')
     return false
   }
-  // file is a FileList of File objects. List some properties.
-  var output = []
-  files = [].slice.call(files)
-  files.map((f) => {
-    output.push(
-      '<li><strong>', escape(f.name), '</strong> (',
-      f.type || 'n/a', ') - ',
-      f.size, 'bytes, last modified: ',
-      f.lastModifiedDate.toLocaleDateString(), '</li>'
-    )
-    document.getElementById('list').innerHTML = '<ul>' + output.join('') + '</ul>'
+
+  Array.from(files, f => {
+    if (!f.type.match('image.*')) {
+      return false
+    }
+
+    let reader = new FileReader()
+
+    reader.onload = ((fileObj) => {
+      return (e) => {
+        let span = document.createElement('span')
+        span.innerHTML = ['<img class="thumb" src="',
+        e.target.result,
+        '" title="',
+        escape(fileObj.name),
+        '"/>'].join('')
+        document.getElementById('list').insertBefore(span, null)
+      }
+    })(f)
+
+    reader.readAsDataURL(f)
+
   })
 }
 
 export function handleDragOver(evt) {
   evt.stopPropagation()
   evt.preventDefault()
-  evt.dataTransfer.dropEffect = 'copy' // Explicitly show this is a copy.
+  evt.dataTransfer.dropEffect = 'copy'
 }
 
 export function handleFileSelectClick(fileSelect) {

@@ -1,0 +1,12 @@
+.drop-zone {
+  border: 1px dashed #ccc;
+  color: #999;
+  margin: 0.2em;
+  padding: 1em;
+}
+
+.thumb {
+  border: 1px solid #000;
+  height: 160px;
+  margin: 10px 5px 0 0;
+}

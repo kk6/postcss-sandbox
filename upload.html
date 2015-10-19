@@ -6,12 +6,6 @@
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300" rel="stylesheet" type="text/css">
   <link rel="stylesheet" href="./vendor/css/sanitize.css" type="text/css" />
   <link rel="stylesheet" href="./build/css/style.css" type="text/css" />
-  <style>
-  #drop_zone {
-    border: 1px solid black;
-    padding: 1em;
-  }
-  </style>
 </head>
 <body class="holy-grail">
 <nav role="navigation" class="header-nav">
@@ -26,9 +20,10 @@
   <main class="main-content">
     <article>
       <h1>Upload</h1>
-      <form action="#">
+      <form action="upload" method="get">
         <textarea name="textarea"></textarea>
-        <div id="drop_zone">Drop files here
+        <div id="drop_zone" class="drop-zone">
+          <span class="fileupload-placeholder">クリックまたはここにファイルをドロップ</span>
           <input type="file" id="files" name="files" multiple accept="image/*" style="display:none" />
         </div>
         <button class="upload-btn" name="submit">Upload</button>

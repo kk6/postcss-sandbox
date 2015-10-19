@@ -3,7 +3,6 @@ import {handleFileSelect, handleDragOver, handleFileSelectClick} from './fileupl
 var files = document.getElementById('files')
 files.addEventListener('change', handleFileSelect, false)
 
-// Setup the dnd listeners.
 var dropZone = document.getElementById('drop_zone')
 dropZone.addEventListener('dragover', handleDragOver, false)
 dropZone.addEventListener('drop', handleFileSelect, false)
