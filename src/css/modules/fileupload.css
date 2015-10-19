@@ -1,3 +1,7 @@
+.upload-form {
+  padding: 0.6em;
+}
+
 .drop-zone {
   border: 1px dashed #ccc;
   color: #999;
@@ -9,4 +13,12 @@
   border: 1px solid #000;
   height: 160px;
   margin: 10px 5px 0 0;
+}
+
+.upload-btn {
+  margin: 0.3em 0;
+}
+
+.tweet {
+  margin: 0.3em 0;
 }

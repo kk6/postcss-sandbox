@@ -18,15 +18,15 @@
 </nav>
 <div class="content-body">
   <main class="main-content">
-    <article>
+    <article class="upload-form">
       <h1>Upload</h1>
       <form action="upload" method="get">
-        <textarea name="textarea"></textarea>
+        <button class="btn upload-btn" name="submit">Post</button>
+        <textarea class="tweet" name="tweet"></textarea>
         <div id="drop_zone" class="drop-zone">
           <span class="fileupload-placeholder">クリックまたはここにファイルをドロップ</span>
           <input type="file" id="files" name="files" multiple accept="image/*" style="display:none" />
         </div>
-        <button class="upload-btn" name="submit">Upload</button>
       </form>
       <output id="list"></output>
     </article>
