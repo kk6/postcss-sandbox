@@ -22,7 +22,7 @@ import cssnano from 'cssnano'
 gulp.task('js', () =>
   browserify({
     entries: './src/js/index.js',
-    extensions: ['.js'],
+    extensions: ['.js', '.jsx'],
     debug: true
   })
   .transform(babelify)
