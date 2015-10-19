@@ -1,0 +1,32 @@
+.holy-grail,
+.content-body {
+  display: flex;
+  flex-direction: column;
+}
+
+.side-1 {
+  order: -1;
+  padding-bottom: 0.5em;
+}
+
+.side-1,
+.side-2 {
+  background: #f4f2f0;
+}
+
+@media (min-width: 768px) {
+  .content-body {
+    flex: 1;
+    flex-direction: row;
+  }
+
+  .main-content {
+    flex: 1;
+  }
+
+  .side-1,
+  .side-2 {
+    flex: 0 0 18em;
+  }
+
+}

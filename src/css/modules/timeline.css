@@ -1,0 +1,65 @@
+.main-content h1 {
+  font-size: 1.2em;
+  margin: 0.5em;
+}
+
+.timeline {
+  list-style: none;
+}
+
+.post {
+  display: flex;
+  flex-direction: column;
+  padding: 1em;
+
+  a {
+    border: none;
+  }
+
+}
+
+.thumbnail img {
+  max-height: 400px;
+  max-width: 600px;
+}
+
+.author-info {
+  display: flex;
+  flex-direction: row;
+  margin-top: 0.5em;
+
+  a {
+    border: none;
+    display: inline-block;
+  }
+
+}
+
+.author-icon {
+  border-radius: 50%;
+  width: 48px;
+}
+
+.text {
+  background: color($main_color l(85%));
+  border-radius: 10px;
+  margin-left: 20px;
+  padding: 0.5em;
+  position: relative;
+
+  &::before {
+    border-bottom: 10px solid transparent;
+    border-left: 10px solid transparent;
+    border-right: 15px solid color($main_color l(85%));
+    border-top: 10px solid transparent;
+    content: "";
+    height: 0;
+    left: -20px;
+    margin-top: -10px;
+    position: absolute;
+    top: 50%;
+    width: 0;
+    z-index: 100;
+  }
+
+}

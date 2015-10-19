@@ -1,154 +1,22 @@
 $main_color: #46b980;
 
 * {
+  font: 400 1em/1.4 "Open Sans", sans-serif;
   font-weight: 300;
-  font: 400 1em/1.4 "Open Sans",sans-serif;
 }
 
 a {
-  color: $main_color;
   border-bottom: 1px dashed rgba(70, 185, 128, 0.5);
-  &:focus, &:hover {
+  color: $main_color;
+
+  &:focus,
+  &:hover {
     border-bottom: 1px solid $main_color;
   }
-  &:active, &:hover {
-    outline: 0px none;
-  }
-}
 
-.holy-grail,
-.content-body {
-  display: flex;
-  flex-direction: column;
-}
-
-.side-1 {
-  order: -1;
-  padding-bottom: 0.5em;
-}
-.side-1, .side-2 {
-  background: #f4f2f0;
-}
-
-@media (min-width: 768px) {
-  .content-body {
-    flex-direction: row;
-    flex: 1;
-  }
-  .main-content {
-    flex: 1;
-  }
-  .side-1, .side-2 {
-    flex: 0 0 18em;
-  }
-}
-.header-nav {
-  background: $main_color;
-  height: 3em;
-}
-
-.main-nav {
-  align-items: flex-end;
-  display: flex;
-  height: 100%;
-  justify-content: center;
-
-  li {
-    width: 100px;
-    margin-bottom: 0.2em;
-
-    a {
-      color: #fff;
-
-      &:hover {
-        text-decoration: underline;
-      }
-
-    }
-
+  &:active,
+  &:hover {
+    outline: 0 none;
   }
 
-}
-
-@define-extend profile-title {
-  margin-top: 0.5em;
-  text-align: center;
-}
-
-.profile {
-  margin-top: 0.5em;
-  display: flex;
-}
-
-.name {
-  @extend profile-title;
-  font-size: 1.2em;
-}
-.screen_name {
-  @extend profile-title;
-  font-size: 0.8em;
-}
-
-.profile-icon {
-  margin: 0 auto;
-  width: 70px;
-  height: 70px;
-  border-radius: 50%;
-}
-
-.profile-status {
-  margin-top: 0.7em;
-  display: flex;
-  justify-content: space-between;
-  list-style: none;
-  padding: 0 1em 0;
-}
-
-
-.post {
-  display: flex;
-  flex-direction: column;
-  padding: 1em;
-  a {
-    border: none;
-  }
-}
-.thumbnail img {
-  max-width: 600px;
-  max-height: 400px;
-}
-.author-info {
-  margin-top: 0.5em;
-  display: flex;
-  flex-direction: row;
-  a {
-    border: none;
-    display: inline-block;
-  }
-}
-.author-icon {
-  width: 48px;
-  border-radius: 50%;
-}
-
-.text {
-  position: relative;
-  background: color($main_color l(85%));
-  border-radius: 10px;
-  margin-left: 20px;
-  padding: 0.5em;
-  &:before {
-    content: "";
-    position: absolute;
-    left: -20px;
-    top: 50%;
-    margin-top: -10px;
-    height: 0;
-    width: 0;
-    border-right: 15px solid color($main_color l(85%));
-border-top: 10px solid transparent;
-border-left: 10px solid transparent;
-border-bottom: 10px solid transparent;
-z-index: 100;
-  }
 }
