@@ -3,6 +3,9 @@ import gulp from 'gulp'
 import browserSync from 'browser-sync'
 import postcss from 'gulp-postcss'
 import plumber from 'gulp-plumber'
+import browserify from 'browserify'
+import babelify from 'babelify'
+import source from 'vinyl-source-stream'
 
 // postcss processors
 import autoprefixer from 'autoprefixer'
@@ -13,6 +16,20 @@ import simpleVars from 'postcss-simple-vars'
 import cssImport from 'postcss-import'
 import cssnano from 'cssnano'
 
+// -------------------------
+// JS
+// -------------------------
+gulp.task('js', () =>
+  browserify({
+    entries: './src/js/index.js',
+    extensions: ['.js'],
+    debug: true
+  })
+  .transform(babelify)
+  .bundle()
+  .pipe(source('bundle.js'))
+  .pipe(gulp.dest('./build/js'))
+)
 
 // -------------------------
 // PostCSS
@@ -47,7 +64,8 @@ gulp.task('browser-sync', () => {
 // -------------------------
 // Watch Task
 // -------------------------
-gulp.task('watch', ['css', 'browser-sync'], () => {
+gulp.task('watch', ['js', 'css', 'browser-sync'], () => {
+  gulp.watch('./src/js/**/*.js', ['js'])
   gulp.watch('./src/css/**/*.css', ['css'])
   gulp.watch('*.html').on('change', browserSync.reload)
 })
