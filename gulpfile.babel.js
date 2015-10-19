@@ -28,7 +28,7 @@ gulp.task('js', () =>
   .transform(babelify)
   .bundle()
   .pipe(source('bundle.js'))
-  .pipe(gulp.dest('./build/js'))
+  .pipe(gulp.dest('./src/build/js'))
 )
 
 // -------------------------
@@ -46,7 +46,7 @@ gulp.task('css', () => {
       autoprefixer({browsers: ['last 2 versions']}),
       cssnano
     ]))
-    .pipe(gulp.dest('./build/css/'))
+    .pipe(gulp.dest('./src/build/css/'))
     .pipe(browserSync.stream())
 })
 
@@ -56,7 +56,7 @@ gulp.task('css', () => {
 gulp.task('browser-sync', () => {
   browserSync.init({
     server: {
-      baseDir: './'
+      baseDir: './src'
     }
   })
 })
@@ -67,7 +67,7 @@ gulp.task('browser-sync', () => {
 gulp.task('watch', ['js', 'css', 'browser-sync'], () => {
   gulp.watch('./src/js/**/*.js', ['js'])
   gulp.watch('./src/css/**/*.css', ['css'])
-  gulp.watch('*.html').on('change', browserSync.reload)
+  gulp.watch('./src/**/*.html').on('change', browserSync.reload)
 })
 
 gulp.task('default', ['watch'])
