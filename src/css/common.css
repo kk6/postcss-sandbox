@@ -36,3 +36,9 @@ textarea {
   padding: 0.4em;
   width: 100%;
 }
+
+.rest-of-char {
+  color: #999;
+  font-weight: bold;
+  margin-left: 1em;
+}

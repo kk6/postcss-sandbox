@@ -37,5 +37,9 @@
     "postcss-simple-vars": "^1.0.1",
     "stylelint": "^2.0.0",
     "vinyl-source-stream": "^1.1.0"
+  },
+  "dependencies": {
+    "react": "^0.14.0",
+    "react-dom": "^0.14.0"
   }
 }

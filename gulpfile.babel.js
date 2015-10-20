@@ -22,13 +22,14 @@ import cssnano from 'cssnano'
 gulp.task('js', () =>
   browserify({
     entries: './src/js/index.js',
-    extensions: ['.js'],
+    extensions: ['.js', '.jsx'],
     debug: true
   })
   .transform(babelify)
   .bundle()
   .pipe(source('bundle.js'))
   .pipe(gulp.dest('./src/build/js'))
+  .pipe(browserSync.stream())
 )
 
 // -------------------------
@@ -65,7 +66,7 @@ gulp.task('browser-sync', () => {
 // Watch Task
 // -------------------------
 gulp.task('watch', ['js', 'css', 'browser-sync'], () => {
-  gulp.watch('./src/js/**/*.js', ['js'])
+  gulp.watch('./src/js/**/*', ['js'])
   gulp.watch('./src/css/**/*.css', ['css'])
   gulp.watch('./src/**/*.html').on('change', browserSync.reload)
 })
