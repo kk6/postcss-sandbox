@@ -3,9 +3,11 @@ import gulp from 'gulp'
 import browserSync from 'browser-sync'
 import postcss from 'gulp-postcss'
 import plumber from 'gulp-plumber'
+import uglify from 'gulp-uglify'
 import browserify from 'browserify'
 import babelify from 'babelify'
 import source from 'vinyl-source-stream'
+import buffer from 'vinyl-buffer'
 
 // postcss processors
 import autoprefixer from 'autoprefixer'
@@ -28,6 +30,8 @@ gulp.task('js', () =>
   .transform(babelify)
   .bundle()
   .pipe(source('bundle.js'))
+  .pipe(buffer())
+  .pipe(uglify())
   .pipe(gulp.dest('./src/build/js'))
   .pipe(browserSync.stream())
 )
