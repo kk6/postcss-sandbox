@@ -3,6 +3,7 @@ import gulp from 'gulp'
 import browserSync from 'browser-sync'
 import postcss from 'gulp-postcss'
 import plumber from 'gulp-plumber'
+import notify from 'gulp-notify'
 import uglify from 'gulp-uglify'
 import browserify from 'browserify'
 import babelify from 'babelify'
@@ -21,6 +22,15 @@ import cssnano from 'cssnano'
 // -------------------------
 // JS
 // -------------------------
+function handleErrors() {
+  const args = Array.from(arguments)
+  notify.onError({
+    title: 'Compile Error',
+    message: '<%= error.message %>'
+  }).apply(this, args)
+  this.emit('end')
+}
+
 gulp.task('js', () =>
   browserify({
     entries: './src/js/index.js',
@@ -29,6 +39,10 @@ gulp.task('js', () =>
   })
   .transform(babelify)
   .bundle()
+  .on('error', handleErrors)
+  .pipe(plumber({
+    errorHandler: notify.onError('Error: <%= error.message %>')
+  }))
   .pipe(source('bundle.js'))
   .pipe(buffer())
   .pipe(uglify())
@@ -41,7 +55,9 @@ gulp.task('js', () =>
 // -------------------------
 gulp.task('css', () => {
   return gulp.src('./src/css/style.css')
-    .pipe(plumber())
+    .pipe(plumber({
+      errorHandler: notify.onError('Error: <%= error.message %>')
+    }))
     .pipe(postcss([
       cssImport,
       simpleVars,
