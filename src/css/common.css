@@ -1,5 +1,18 @@
 $main_color: #46b980;
 
+@define-placeholder btn {
+  border-radius: 6px;
+  height: 40px;
+  width: 100px;
+}
+
+@define-placeholder txtarea {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 0.4em;
+  width: 100%;
+}
+
 * {
   font: 400 1em/1.4 "Open Sans", sans-serif;
   font-weight: 300;
@@ -19,26 +32,4 @@ a {
     outline: 0 none;
   }
 
-}
-
-.btn {
-  background: $main_color;
-  border-radius: 6px;
-  color: #fff;
-  font-weight: bold;
-  height: 40px;
-  width: 100px;
-}
-
-textarea {
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  padding: 0.4em;
-  width: 100%;
-}
-
-.rest-of-char {
-  color: #999;
-  font-weight: bold;
-  margin-left: 1em;
 }

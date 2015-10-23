@@ -17,8 +17,8 @@ export default class TweetBox extends React.Component {
   render() {
     return (
       <div className="tweet-box">
-        <button className="btn upload-btn" name="submit" disabled={this.isEmpty()}>Tweet</button>
-        <span className="rest-of-char">{this.countDownRemainingText()}</span>
+        <button className="tweet-btn" type="submit" name="submit" disabled={this.isEmpty()}>Tweet</button>
+        <span className="remaining-text">{this.countDownRemainingText()}</span>
         <textarea className="tweet-area" name="tweet" onChange={this.handleChange.bind(this)}
          placeholder="進捗どうですか？" maxLength="140"></textarea>
       </div>
