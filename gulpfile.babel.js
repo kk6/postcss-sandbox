@@ -22,12 +22,14 @@ import cssnano from 'cssnano'
 // -------------------------
 // JS
 // -------------------------
-function handleErrors() {
+function handleErrors(err) {
   const args = Array.from(arguments)
   notify.onError({
-    title: 'Compile Error',
-    message: '<%= error.message %>'
+    title: err.plugin,
+    message: err.message,
+    sound: 'Sosumi'
   }).apply(this, args)
+  console.log([err.filename, err.codeFrame].join('\n'))
   this.emit('end')
 }
 
@@ -40,9 +42,6 @@ gulp.task('js', () =>
   .transform(babelify)
   .bundle()
   .on('error', handleErrors)
-  .pipe(plumber({
-    errorHandler: notify.onError('Error: <%= error.message %>')
-  }))
   .pipe(source('bundle.js'))
   .pipe(buffer())
   .pipe(uglify())
