@@ -18,9 +18,18 @@
 
 }
 
-.thumbnail img {
-  max-height: 400px;
-  max-width: 600px;
+@media (min-width: 768px) {
+  .thumbnail img {
+    max-height: 400px;
+    max-width: 600px;
+  }
+}
+
+@media (max-width: 768px) {
+  .thumbnail img {
+    max-height: 400px;
+    max-width: 320px;
+  }
 }
 
 .author-info {
