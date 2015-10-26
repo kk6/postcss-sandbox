@@ -7,9 +7,9 @@ $main_color: #46b980;
 }
 
 @define-placeholder txtarea {
-  border: 1px solid #ccc;
+  border: 1px solid #fff;
   border-radius: 4px;
-  padding: 0.4em;
+  padding: .4em;
   width: 100%;
 }
 
@@ -19,7 +19,7 @@ $main_color: #46b980;
 }
 
 a {
-  border-bottom: 1px dashed rgba(70, 185, 128, 0.5);
+  border-bottom: 1px dashed rgba(70,185,128,.5);
   color: $main_color;
 
   &:focus,

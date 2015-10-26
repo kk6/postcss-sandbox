@@ -3,17 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
   <title>PostCSS-sandbox</title>
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300" rel="stylesheet" type="text/css">
-  <link rel="stylesheet" href="./vendor/css/sanitize.css" type="text/css" />
-  <link rel="stylesheet" href="./build/css/style.css" type="text/css" />
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300" rel="stylesheet">
+  <link rel="stylesheet" href="./vendor/css/sanitize.css">
+  <link rel="stylesheet" href="./build/css/style.css">
 </head>
 <body class="holy-grail">
-<nav role="navigation" class="header-nav">
+<nav class="header-nav" role="navigation">
   <ul class="main-nav">
     <li><a href="index.html">Home</a></li>
     <li><a href="upload.html">Upload</a></li>
-    <li><a href="#">Menu 3</a></li>
+    <li><a href="gallery.html">Gallery</a></li>
     <li><a href="#">Menu 4</a></li>
   </ul>
 </nav>
@@ -43,13 +44,20 @@
       </ul>
     </div>
   </aside>
-  <aside class="side-2"><h2>hogehoge</h2></aside>
+  <aside class="side-2">
+    <h2>Tags</h2>
+    <ul class="tags">
+    	<li><a href="#">tag</a></li>
+    	<li><a href="#">tag name</a></li>
+      <li><a href="#">あの日見た花の名前を僕達はまだ知らない</a></li>
+    </ul>
+  </aside>
 </div>
 <footer class="footer">
   <div class="footer-content">
     <span class="copyright">&copy; <a href="https://twitter.com/kk6">kk6</a></span>
   </div>
 </footer>
-<script type="text/javascript" src="./build/js/bundle.js"></script>
+<script src="./build/js/bundle.js"></script>
 </body>
 </html>
