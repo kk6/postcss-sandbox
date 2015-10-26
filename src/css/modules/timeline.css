@@ -8,6 +8,7 @@
 }
 
 .post {
+  align-items: center;
   display: flex;
   flex-direction: column;
   padding: 1em;
@@ -17,12 +18,11 @@
   }
 
 }
-
-@media (min-width: 768px) {
-  .thumbnail img {
-    max-height: 400px;
-    max-width: 600px;
-  }
+.thumbnail img {
+  object-fit: cover;
+  object-position: top;
+  width: 600px;
+  height: 400px;
 }
 
 @media (max-width: 768px) {

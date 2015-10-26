@@ -6,12 +6,12 @@
 
 .side-1 {
   order: -1;
-  padding-bottom: 0.5em;
 }
 
 .side-1,
 .side-2 {
   background: #f4f2f0;
+  padding: 0.5em;
 }
 
 @media (min-width: 768px) {

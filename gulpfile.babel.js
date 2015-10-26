@@ -63,7 +63,7 @@ gulp.task('css', () => {
       extend,
       nested,
       color,
-      autoprefixer({browsers: ['last 2 versions']}),
+      autoprefixer({browsers: ['last 2 versions', 'android 4.0']}),
       cssnano
     ]))
     .pipe(gulp.dest('./src/build/css/'))
