@@ -16,7 +16,18 @@
             2,
             "never"
         ],
+        "arrow-parens": 2,
+        "arrow-spacing": 2,
+        "constructor-super": 2,
         "no-console": 0,
+        "no-new-object": 2,
+        "no-loop-func": 2,
+        "no-var": 2,
+        "no-dupe-class-members ": 2,
+        "dot-notation": 2,
+        "func-names": 2,
+        "prefer-template": 2,
+        "accessor-pairs": [2, {"getWithoutSet": true}],
         "react/jsx-uses-react": 1
     },
     "env": {

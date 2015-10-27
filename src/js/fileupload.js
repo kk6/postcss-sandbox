@@ -13,7 +13,7 @@ export function handleFileSelect(evt) {
     return false
   }
 
-  Array.from(files, f => {
+  Array.from(files, (f) => {
     if (!f.type.match('image.*')) {
       return false
     }
